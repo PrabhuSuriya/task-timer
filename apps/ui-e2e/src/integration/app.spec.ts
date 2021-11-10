@@ -1,6 +1,6 @@
 import { getGreeting } from '../support/app.po';
 
-describe('task-timer-ui', () => {
+describe('ui', () => {
   beforeEach(() => cy.visit('/'));
 
   it('should display welcome message', () => {
@@ -8,6 +8,6 @@ describe('task-timer-ui', () => {
     cy.login('my-email@something.com', 'myPassword');
 
     // Function helper example, see `../support/app.po.ts` file
-    getGreeting().contains('Welcome to task-timer-ui!');
+    getGreeting().contains('Welcome to ui!');
   });
 });

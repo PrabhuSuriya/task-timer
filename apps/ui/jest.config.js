@@ -1,5 +1,5 @@
 module.exports = {
-  displayName: 'task-timer-ui',
+  displayName: 'ui',
   preset: '../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
@@ -8,7 +8,7 @@ module.exports = {
       stringifyContentPathRegex: '\\.(html|svg)$',
     },
   },
-  coverageDirectory: '../../coverage/apps/task-timer-ui',
+  coverageDirectory: '../../coverage/apps/ui',
   transform: {
     '^.+\\.(ts|js|html)$': 'jest-preset-angular',
   },

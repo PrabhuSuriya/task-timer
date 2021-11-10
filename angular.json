@@ -76,27 +76,27 @@
       },
       "tags": []
     },
-    "task-timer-ui": {
+    "ui": {
       "projectType": "application",
-      "root": "apps/task-timer-ui",
-      "sourceRoot": "apps/task-timer-ui/src",
+      "root": "apps/ui",
+      "sourceRoot": "apps/ui/src",
       "prefix": "task-timer",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "outputs": ["{options.outputPath}"],
           "options": {
-            "outputPath": "dist/apps/task-timer-ui",
-            "index": "apps/task-timer-ui/src/index.html",
-            "main": "apps/task-timer-ui/src/main.ts",
-            "polyfills": "apps/task-timer-ui/src/polyfills.ts",
-            "tsConfig": "apps/task-timer-ui/tsconfig.app.json",
+            "outputPath": "dist/apps/ui",
+            "index": "apps/ui/src/index.html",
+            "main": "apps/ui/src/main.ts",
+            "polyfills": "apps/ui/src/polyfills.ts",
+            "tsConfig": "apps/ui/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "apps/task-timer-ui/src/favicon.ico",
-              "apps/task-timer-ui/src/assets"
+              "apps/ui/src/favicon.ico",
+              "apps/ui/src/assets"
             ],
-            "styles": ["apps/task-timer-ui/src/styles.scss"],
+            "styles": ["apps/ui/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -115,8 +115,8 @@
               ],
               "fileReplacements": [
                 {
-                  "replace": "apps/task-timer-ui/src/environments/environment.ts",
-                  "with": "apps/task-timer-ui/src/environments/environment.prod.ts"
+                  "replace": "apps/ui/src/environments/environment.ts",
+                  "with": "apps/ui/src/environments/environment.prod.ts"
                 }
               ],
               "outputHashing": "all"
@@ -136,57 +136,57 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "task-timer-ui:build:production"
+              "browserTarget": "ui:build:production"
             },
             "development": {
-              "browserTarget": "task-timer-ui:build:development"
+              "browserTarget": "ui:build:development"
             }
           },
           "defaultConfiguration": "development",
           "options": {
-            "proxyConfig": "apps/task-timer-ui/proxy.conf.json"
+            "proxyConfig": "apps/ui/proxy.conf.json"
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "task-timer-ui:build"
+            "browserTarget": "ui:build"
           }
         },
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": [
-              "apps/task-timer-ui/src/**/*.ts",
-              "apps/task-timer-ui/src/**/*.html"
+              "apps/ui/src/**/*.ts",
+              "apps/ui/src/**/*.html"
             ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/task-timer-ui"],
+          "outputs": ["coverage/apps/ui"],
           "options": {
-            "jestConfig": "apps/task-timer-ui/jest.config.js",
+            "jestConfig": "apps/ui/jest.config.js",
             "passWithNoTests": true
           }
         }
       },
       "tags": []
     },
-    "task-timer-ui-e2e": {
-      "root": "apps/task-timer-ui-e2e",
-      "sourceRoot": "apps/task-timer-ui-e2e/src",
+    "ui-e2e": {
+      "root": "apps/ui-e2e",
+      "sourceRoot": "apps/ui-e2e/src",
       "projectType": "application",
       "architect": {
         "e2e": {
           "builder": "@nrwl/cypress:cypress",
           "options": {
-            "cypressConfig": "apps/task-timer-ui-e2e/cypress.json",
-            "devServerTarget": "task-timer-ui:serve:development"
+            "cypressConfig": "apps/ui-e2e/cypress.json",
+            "devServerTarget": "ui:serve:development"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "task-timer-ui:serve:production"
+              "devServerTarget": "ui:serve:production"
             }
           }
         },
@@ -194,12 +194,12 @@
           "builder": "@nrwl/linter:eslint",
           "outputs": ["{options.outputFile}"],
           "options": {
-            "lintFilePatterns": ["apps/task-timer-ui-e2e/**/*.{js,ts}"]
+            "lintFilePatterns": ["apps/ui-e2e/**/*.{js,ts}"]
           }
         }
       },
       "tags": [],
-      "implicitDependencies": ["task-timer-ui"]
+      "implicitDependencies": ["ui"]
     }
   }
 }
