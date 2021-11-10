@@ -1,23 +1,18 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-export interface JournalEntry {
-  title: string;
-  body: string;
-  timestamp?: Date;
-}
-
+import { Task } from '@task-timer/common';
 @Injectable({
   providedIn: 'root'
 })
-export class JournalEntriesService {
+export class TaskService {
   constructor(private http: HttpClient) { }
 
   fetch() {
-    return this.http.get<JournalEntry[]>('/api/entries');
+    return this.http.get<Task[]>('/api/entries');
   }
 
-  save(entry: JournalEntry) {
+  save(entry: Task) {
     return this.http.post('/api/entries', entry);
   }
 

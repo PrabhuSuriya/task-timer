@@ -1,25 +1,19 @@
 import { Injectable } from '@nestjs/common';
-
-export interface JournalEntry {
-  title: string;
-  body: string;
-  timestamp?: Date;
-}
-
+import { Task } from '@task-timer/common';
 @Injectable()
 export class AppService {
 
-  entries: JournalEntry[] = [{
-     title: 'example title',
-     body: 'example journal entry',
+  entries: Task[] = [{
+    title: 'example title',
+    body: 'example journal entry',
     timestamp: new Date()
   }];
 
-  getData(): JournalEntry[] {
+  getData(): Task[] {
     return this.entries;
   }
 
-  create(entry: JournalEntry) {
+  create(entry: Task) {
     const newEntry = {
       title: entry.title,
       body: entry.body,

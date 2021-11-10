@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { JournalEntriesService, JournalEntry } from './services/journal-entries/journal-entries.service';
+import { TaskService } from './services/journal-entries/journal-entries.service';
+
+import { Task } from '@task-timer/common';
 
 @Component({
   selector: 'task-timer-root',
@@ -7,9 +9,9 @@ import { JournalEntriesService, JournalEntry } from './services/journal-entries/
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  entries: JournalEntry[] = [];
+  entries: Task[] = [];
 
-  constructor(private dataService: JournalEntriesService) {}
+  constructor(private dataService: TaskService) {}
 
   ngOnInit(): void {
     this.fetch();
@@ -17,7 +19,7 @@ export class AppComponent {
 
   fetch() {
     this.dataService.fetch().subscribe({
-      next: (response: JournalEntry[]) => (this.entries = response)
+      next: (response: Task[]) => (this.entries = response)
     });
   }
 

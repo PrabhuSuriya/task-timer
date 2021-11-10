@@ -1,7 +1,7 @@
 import { Body, Controller, Delete, Get, Param, ParseIntPipe, Post } from '@nestjs/common';
+import { Task } from '@task-timer/common';
 
-import { AppService, JournalEntry } from './app.service';
-
+import { AppService } from './app.service';
 @Controller('entries')
 export class AppController {
  constructor(private readonly appService: AppService) {}
@@ -12,7 +12,7 @@ export class AppController {
  }
 
  @Post()
- create(@Body() body: JournalEntry) {
+ create(@Body() body: Task) {
    return this.appService.create(body);
  }
 
