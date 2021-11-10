@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { TaskService } from './services/journal-entries/journal-entries.service';
+import { TaskService } from './services/task/task.service';
 
 import { Task } from '@task-timer/common';
 
